@@ -33,8 +33,8 @@ body:
         - osx-64
     validations:
       required: true
-  - type: navigator-version
-    id: browsers
+  - type: dropdown
+    id: navigator-version
     attributes:
       label: Anaconda Navigator version
       options:

@@ -5,7 +5,6 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
         Thanks for opening an issue! Please fill out the following template in full.
 
         A few things to keep in mind:
@@ -64,6 +63,8 @@ body:
         - 1.6.10
         - 1.6.9
         - 1.6.8
+    validations:
+      required: true
   - type: dropdown
     id: anaconda-version
     attributes:
@@ -257,6 +258,8 @@ body:
         - Miniconda-1.9.1
         - Miniconda-1.6.2
         - Miniconda-1.6.0
+    validations:
+      required: true
   - type: textarea
     id: conda-info
     attributes:

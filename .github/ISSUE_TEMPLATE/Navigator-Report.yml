@@ -258,8 +258,6 @@ body:
         - Miniconda-1.9.1
         - Miniconda-1.6.2
         - Miniconda-1.6.0
-    validations:
-      required: true
   - type: textarea
     id: conda-info
     attributes:

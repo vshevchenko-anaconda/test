@@ -282,5 +282,5 @@ body:
       label: Code of Conduct
       description: By submitting this issue, you agree to follow our [Code of Conduct](https://www.anaconda.com/community-code-of-conduct/).
       options:
-        - label: I agree to follow this project's Anaconda Community Code of Conduct
+        - label: I agree to follow Anaconda Community Code of Conduct
           required: true

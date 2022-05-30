@@ -260,14 +260,14 @@ body:
   - type: textarea
     id: conda-info
     attributes:
-      label: `conda info` output
-      description: Paste copy and paste the output of `conda info` command
+      label: "`conda info` output"
+      description: "Paste copy and paste the output of `conda info` command"
       render: shell
   - type: textarea
     id: conda-list
     attributes:
-      label: `conda list -n base --show-channel-urls` output
-      description: Paste copy and paste the output of `conda list -n base --show-channel-urls` command
+      label: "`conda list -n base --show-channel-urls` output"
+      description: "Paste copy and paste the output of `conda list -n base --show-channel-urls` command"
       render: shell
   - type: checkboxes
     id: terms

@@ -13,9 +13,9 @@ body:
         - For conda-build issues, you should open an issue at [conda-build repo](https://github.com/conda/conda-build)
         - For an issue with a particular conda-forge package, you should open an issue on the corresponding [feedstock](https://github.com/conda-forge) 
   - type: textarea
-    id: actual-behavior
+    id: description
     attributes:
-      label: Actual Behavior
+      label: Description
       placeholder: What actually happens?
     validations:
       required: true
@@ -266,12 +266,16 @@ body:
       label: "`conda info` output"
       description: "Paste copy and paste the output of `conda info` command"
       render: shell
+    validations:
+      required: true
   - type: textarea
     id: conda-list
     attributes:
       label: "`conda list -n base --show-channel-urls` output"
       description: "Paste copy and paste the output of `conda list -n base --show-channel-urls` command"
       render: shell
+    validations:
+      required: true
   - type: checkboxes
     id: terms
     attributes:

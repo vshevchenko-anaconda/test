@@ -1,0 +1,279 @@
+name: Navigator Bug Report
+description: File a bug report for anaconda-navigator
+labels: ["pkg-navigator"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        Thanks for opening an issue! Please fill out the following template in full.
+
+        A few things to keep in mind:
+        - This issue tracker is for issues with installing Anaconda or Miniconda or with packages built by Anaconda, Inc. like Anaconda Navigator. It is also a place to request packages or other enhancements of the Anaconda Distribution.
+        - For conda issues, you should open an issue at [conda repo](https://github.com/conda/conda/issues)
+        - For conda-build issues, you should open an issue at [conda-build repo](https://github.com/conda/conda-build)
+        - For an issue with a particular conda-forge package, you should open an issue on the corresponding [feedstock](https://github.com/conda-forge) 
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      placeholder: What actually happens?
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - linux-32
+        - linux-64
+        - win-32
+        - win-64
+        - osx-32
+        - osx-64
+    validations:
+      required: true
+  - type: navigator-version
+    id: browsers
+    attributes:
+      label: Anaconda Navigator version
+      options:
+        - 2.2.0
+        - 2.1.4
+        - 2.1.2
+        - 2.1.1
+        - 2.1.0
+        - 2.0.4
+        - 2.0.3
+        - 2.0.1
+        - 1.10.0
+        - 1.9.12
+        - 1.9.7
+        - 1.9.6
+        - 1.9.4
+        - 1.9.2
+        - 1.8.7
+        - 1.8.5
+        - 1.8.4
+        - 1.8.3
+        - 1.8.2
+        - 1.8.1
+        - 1.7.0
+        - 1.6.12
+        - 1.6.11
+        - 1.6.10
+        - 1.6.9
+        - 1.6.8
+  - type: dropdown
+    id: anaconda-version
+    attributes:
+      label: Anaconda/Miniconda Version
+      description: This is the version number in the filename of the package you downloaded
+      options:
+        - Anaconda3-5.3.1
+        - Anaconda3-5.3.0
+        - Anaconda3-5.2.0
+        - Anaconda3-5.1.0
+        - Anaconda3-5.0.1
+        - Anaconda3-5.0.0.1
+        - Anaconda3-5.0.0
+        - Anaconda3-4.4.0.1
+        - Anaconda3-4.4.0
+        - Anaconda3-4.3.1
+        - Anaconda3-4.3.0.1
+        - Anaconda3-4.3.0
+        - Anaconda3-4.2.0
+        - Anaconda3-4.1.1
+        - Anaconda3-4.1.0
+        - Anaconda3-4.0.0
+        - Anaconda3-2022.05
+        - Anaconda3-2021.11
+        - Anaconda3-2021.05
+        - Anaconda3-2021.04
+        - Anaconda3-2020.11
+        - Anaconda3-2020.07
+        - Anaconda3-2020.02
+        - Anaconda3-2019.10
+        - Anaconda3-2019.07
+        - Anaconda3-2019.03
+        - Anaconda3-2018.12
+        - Anaconda3-2.5.0
+        - Anaconda3-2.4.1
+        - Anaconda3-2.4.0
+        - Anaconda3-2.3.0
+        - Anaconda3-2.2.0
+        - Anaconda3-2.1.0
+        - Anaconda3-2.0.1
+        - Anaconda3-2.0.0
+        - Anaconda2-5.3.1
+        - Anaconda2-5.3.0
+        - Anaconda2-5.2.0
+        - Anaconda2-5.1.0
+        - Anaconda2-5.0.1
+        - Anaconda2-5.0.0.1
+        - Anaconda2-5.0.0
+        - Anaconda2-4.4.0.1
+        - Anaconda2-4.4.0
+        - Anaconda2-4.3.1
+        - Anaconda2-4.3.0.1
+        - Anaconda2-4.3.0
+        - Anaconda2-4.2.0
+        - Anaconda2-4.1.1
+        - Anaconda2-4.1.0
+        - Anaconda2-4.0.0
+        - Anaconda2-2019.10
+        - Anaconda2-2019.07
+        - Anaconda2-2019.03
+        - Anaconda2-2018.12
+        - Anaconda2-2.5.0
+        - Anaconda2-2.4.1
+        - Anaconda2-2.4.0
+        - Anaconda-2.3.0
+        - Anaconda-2.2.0
+        - Anaconda-2.1.0
+        - Anaconda-2.0.1
+        - Anaconda-2.0.0
+        - Anaconda-1.9.2
+        - Anaconda-1.9.1
+        - Anaconda-1.9.0
+        - Anaconda-1.8.0
+        - Anaconda-1.7.0
+        - Anaconda-1.6.2
+        - Anaconda-1.6.1
+        - Anaconda-1.6.0
+        - Anaconda-1.5.1
+        - Anaconda-1.5.0
+        - Anaconda-1.4.0
+        - Miniconda3-py39_4.9.2
+        - Miniconda3-py39_4.12.0
+        - Miniconda3-py39_4.11.0
+        - Miniconda3-py39_4.10.3
+        - Miniconda3-py39_4.10.1
+        - Miniconda3-py38_4.9.2
+        - Miniconda3-py38_4.8.3
+        - Miniconda3-py38_4.8.2
+        - Miniconda3-py38_4.12.0
+        - Miniconda3-py38_4.11.0
+        - Miniconda3-py38_4.10.3
+        - Miniconda3-py38_4.10.1
+        - Miniconda3-py37_4.9.2
+        - Miniconda3-py37_4.8.3
+        - Miniconda3-py37_4.8.2
+        - Miniconda3-py37_4.12.0
+        - Miniconda3-py37_4.11.0
+        - Miniconda3-py37_4.10.3
+        - Miniconda3-py37_4.10.1
+        - Miniconda3-latest
+        - Miniconda3-4.7.12.1
+        - Miniconda3-4.7.12
+        - Miniconda3-4.7.10
+        - Miniconda3-4.6.14
+        - Miniconda3-4.5.4
+        - Miniconda3-4.5.12
+        - Miniconda3-4.5.11
+        - Miniconda3-4.5.1
+        - Miniconda3-4.4.10
+        - Miniconda3-4.3.31
+        - Miniconda3-4.3.30.2
+        - Miniconda3-4.3.30.1
+        - Miniconda3-4.3.30
+        - Miniconda3-4.3.27.1
+        - Miniconda3-4.3.27
+        - Miniconda3-4.3.21
+        - Miniconda3-4.3.14
+        - Miniconda3-4.3.11
+        - Miniconda3-4.2.12
+        - Miniconda3-4.2.11
+        - Miniconda3-4.1.11
+        - Miniconda3-4.0.5
+        - Miniconda3-3.9.1
+        - Miniconda3-3.8.3
+        - Miniconda3-3.7.3
+        - Miniconda3-3.7.0
+        - Miniconda3-3.6.0
+        - Miniconda3-3.5.5
+        - Miniconda3-3.5.2
+        - Miniconda3-3.4.2
+        - Miniconda3-3.3.0
+        - Miniconda3-3.19.0
+        - Miniconda3-3.18.9
+        - Miniconda3-3.18.8
+        - Miniconda3-3.18.3
+        - Miniconda3-3.16.0
+        - Miniconda3-3.10.1
+        - Miniconda3-3.0.5
+        - Miniconda3-3.0.4
+        - Miniconda3-3.0.0
+        - Miniconda3-2.2.8
+        - Miniconda3-2.2.2
+        - Miniconda2-py27_4.8.3
+        - Miniconda2-latest
+        - Miniconda2-4.7.12.1
+        - Miniconda2-4.7.12
+        - Miniconda2-4.7.10
+        - Miniconda2-4.6.14
+        - Miniconda2-4.5.4
+        - Miniconda2-4.5.12
+        - Miniconda2-4.5.11
+        - Miniconda2-4.5.1
+        - Miniconda2-4.4.10
+        - Miniconda2-4.3.31
+        - Miniconda2-4.3.30.2
+        - Miniconda2-4.3.30.1
+        - Miniconda2-4.3.30
+        - Miniconda2-4.3.27.1
+        - Miniconda2-4.3.27
+        - Miniconda2-4.3.21
+        - Miniconda2-4.3.14
+        - Miniconda2-4.3.11
+        - Miniconda2-4.2.15
+        - Miniconda2-4.2.12
+        - Miniconda2-4.2.11
+        - Miniconda2-4.1.11
+        - Miniconda2-4.0.5
+        - Miniconda2-3.19.0
+        - Miniconda2-3.18.9
+        - Miniconda2-3.18.8
+        - Miniconda2-3.18.3
+        - Miniconda-latest
+        - Miniconda-3.9.1
+        - Miniconda-3.8.3
+        - Miniconda-3.7.3
+        - Miniconda-3.7.0
+        - Miniconda-3.6.0
+        - Miniconda-3.5.5
+        - Miniconda-3.5.2
+        - Miniconda-3.4.2
+        - Miniconda-3.3.0
+        - Miniconda-3.16.0
+        - Miniconda-3.10.1
+        - Miniconda-3.0.5
+        - Miniconda-3.0.4
+        - Miniconda-3.0.0
+        - Miniconda-2.2.8
+        - Miniconda-2.2.2
+        - Miniconda-2.0.3
+        - Miniconda-2.0.0
+        - Miniconda-1.9.1
+        - Miniconda-1.6.2
+        - Miniconda-1.6.0
+  - type: textarea
+    id: conda-info
+    attributes:
+      label: `conda info` output
+      description: Paste copy and paste the output of `conda info` command
+      render: shell
+  - type: textarea
+    id: conda-list
+    attributes:
+      label: `conda list -n base --show-channel-urls` output
+      description: Paste copy and paste the output of `conda list -n base --show-channel-urls` command
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://www.anaconda.com/community-code-of-conduct/).
+      options:
+        - label: I agree to follow this project's Anaconda Community Code of Conduct
+          required: true

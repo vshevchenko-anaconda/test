@@ -18,12 +18,11 @@ body:
       label: Description
       description: Please tell us, what kind of problem you experienced with Anaconda-Navigator?
       placeholder: |
-         We encourage you to use all provided by GitHub tools to add as many details as possible. 
-
-        - Please describe an actual behavior and steps to reproduce it.
-        - Attach screenshots if the issue is any UI artifact. 
-        - Specify steps that lead to the spotted issue.
-        - Please copy and paste the output of `anaconda-navigator --debug`
+         We encourage you to use all provided by GitHub tools to add as many details as possible: 
+          - Please describe an actual behavior and steps to reproduce it.
+          - Attach screenshots if the issue is any UI artifact. 
+          - Specify steps that lead to the spotted issue.
+          - Please copy and paste the output of `anaconda-navigator --debug`
     validations:
       required: true
   - type: textarea

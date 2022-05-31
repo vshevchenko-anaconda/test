@@ -1,5 +1,5 @@
-name: Navigator Bug Report
-description: File a bug report for anaconda-navigator
+name: Navigator Issue Report
+description: File a report for anaconda-navigator
 labels: ["pkg-navigator"]
 body:
   - type: markdown

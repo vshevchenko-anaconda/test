@@ -57,7 +57,7 @@ jobs:
         run: |
           /opt/bitnami/git/bin/git config --global --add safe.directory /__w/test/test
           /opt/bitnami/git/bin/git status
-          alias git=/opt/bitnami/git/bin/git
+          alias git='/opt/bitnami/git/bin/git'
           git status
           python /__w/test/test/main.py
         env:

@@ -54,6 +54,6 @@ jobs:
 
       - name: Run tests
         run: |
-          python /home/runner/test/test/main.py
+          python /home/runner/work/test/test/main.py
         env:
           ANACONDA_MONGO_URL_TESTING: mongodb://root:password123@localhost:27017,localhost:27018/?replicaSet=replicaset

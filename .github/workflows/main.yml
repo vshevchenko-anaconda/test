@@ -41,6 +41,8 @@ jobs:
     permissions: read-all
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v2
         with:

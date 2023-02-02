@@ -1,0 +1,58 @@
+name: Build
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - master
+      - main
+      - develop
+  release:
+    types: [published]
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    needs: build
+    services:
+      mongodb_primary:
+        image: bitnami/mongodb:4.2
+        ports:
+          - "27017:27017"
+        env:
+          MONGODB_REPLICA_SET_MODE: primary
+          MONGODB_ROOT_PASSWORD: password123
+          MONGODB_REPLICA_SET_KEY: replicasetkey123
+      mongodb_secondary:
+        image: bitnami/mongodb:4.2
+        ports:
+          - "27018:27017"
+        env:
+          MONGODB_REPLICA_SET_MODE: secondary
+          MONGODB_INITIAL_PRIMARY_HOST: localhost
+          MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
+          MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD: password123
+          MONGODB_REPLICA_SET_KEY: replicasetkey123
+    permissions: read-all
+
+    steps:
+      - name: Install miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          installer-url: https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
+
+      - name: Install pymongo
+        run: |
+          conda install --yes pymongo
+
+      - name: Run tests
+        run: |
+          python main.py
+        env:
+          ANACONDA_MONGO_URL_TESTING: mongodb://root:password123@localhost:27017,localhost:27018/?replicaSet=replicaset

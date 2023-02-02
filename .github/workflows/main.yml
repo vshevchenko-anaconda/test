@@ -18,6 +18,7 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container: ubuntu:latest
     name: Test
     services:
       mongodb_primary:
@@ -34,7 +35,7 @@ jobs:
           - "27018:27017"
         env:
           MONGODB_REPLICA_SET_MODE: secondary
-          MONGODB_INITIAL_PRIMARY_HOST: localhost
+          MONGODB_INITIAL_PRIMARY_HOST: mongodb_primary
           MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
           MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD: password123
           MONGODB_REPLICA_SET_KEY: replicasetkey123
@@ -56,4 +57,4 @@ jobs:
         run: |
           python /home/runner/work/test/test/main.py
         env:
-          ANACONDA_MONGO_URL_TESTING: mongodb://root:password123@localhost:27017,localhost:27018/?replicaSet=replicaset
+          ANACONDA_MONGO_URL_TESTING: mongodb://root:password123@mongodb_primary:27017,mongodb_secondary:27018/?replicaSet=replicaset

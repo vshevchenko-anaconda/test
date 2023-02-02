@@ -58,6 +58,7 @@ jobs:
           /opt/bitnami/git/bin/git config --global --add safe.directory /__w/test/test
           /opt/bitnami/git/bin/git status
           alias git=/opt/bitnami/git/bin/git
+          git status
           python /__w/test/test/main.py
         env:
           ANACONDA_MONGO_URL_TESTING: mongodb://root:password123@mongodb_primary:27017,mongodb_secondary:27018/?replicaSet=replicaset

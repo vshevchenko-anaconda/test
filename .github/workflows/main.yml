@@ -18,7 +18,7 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: ubuntu:latest
+    container: alpine/git:latest
     name: Test
     services:
       mongodb_primary:
@@ -55,6 +55,7 @@ jobs:
 
       - name: Run tests
         run: |
+          git status
           python /__w/test/test/main.py
         env:
           ANACONDA_MONGO_URL_TESTING: mongodb://root:password123@mongodb_primary:27017,mongodb_secondary:27018/?replicaSet=replicaset

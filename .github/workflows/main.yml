@@ -19,7 +19,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Test
-    container: ubuntu:latest
+    container:
+      image: ubuntu:latest
+      volumes:
+        - /usr/bin/git:/usr/bin/git
     services:
       mongodb_primary:
         image: bitnami/mongodb:4.2

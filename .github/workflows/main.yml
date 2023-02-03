@@ -19,6 +19,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Test
+    container: ubuntu:latest
     services:
       mongodb_primary:
         image: bitnami/mongodb:4.2
@@ -42,7 +43,7 @@ jobs:
 
     steps:
       - name: show git
-        run: which git
+        run: /usr/bin/git --version
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install miniconda

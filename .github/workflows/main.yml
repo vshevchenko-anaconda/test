@@ -45,15 +45,14 @@ jobs:
     permissions: read-all
 
     steps:
-      - name: show git
-        run: /usr/bin/git --version
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v2
         with:
           installer-url: https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
-
+      - name: show git
+        run: git --version
       - name: Install pymongo
         run: |
           conda install --yes pymongo
